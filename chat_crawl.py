@@ -56,6 +56,14 @@ word_text = " ".join(wordlist)
 word_text = " ".join(word_text.split())
 print word_text
 
+word_count = {}
+unique_w = list(set(word_text.split()))
+for u in unique_w:
+    word_count[u] = word_text.count(u)
 
-
+sorted_word = sorted(word_count.items(), key=lambda x:x[1],reverse=True)
+for s in sorted_word:
+    if len(s[0]) == 1:
+        continue
+    print s[0]+" "+str(s[1])
 
